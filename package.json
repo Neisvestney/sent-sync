@@ -1,49 +1,30 @@
 {
-    "name": "SentSync",
-    "version": "0.0.1",
-    "description": "Chrome extension for syncing video progress with your friends",
-    "main": "src/index.js",
-    "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-eslint": "^7.2.3",
-        "babel-loader": "^8.2.2",
-        "babel-plugin-transform-object-rest-spread": "^6.26.0",
-        "babel-plugin-transform-react-jsx": "^6.24.1",
-        "babel-preset-env": "^1.6.1",
-        "copy-webpack-plugin": "^4.0.1",
-        "crx-webpack-plugin": "^0.1.5",
-        "eslint": "^4.2.0",
-        "eslint-plugin-react": "^7.1.0",
-        "rimraf": "^2.6.1",
-        "webpack": "^5.0.0",
-        "webpack-cli": "^4.7.2"
-    },
-    "scripts": {
-        "start": "webpack --watch --progress",
-        "build": "webpack --progress"
-    },
-    "nodemonConfig": {
-        "ignore": [
-            "dist/",
-            "node_modules"
-        ],
-        "execMap": {
-            "js": "node"
-        },
-        "ext": "js html css",
-        "verbose": true
-    },
-    "dependencies": {
-        "css-loader": "^5.2.6",
-        "file-loader": "^6.2.0",
-        "jquery": "^3.6.0",
-        "nodemon": "^1.14.12",
-        "sass": "^1.35.1",
-        "sass-loader": "^12.1.0",
-        "style-loader": "^3.0.0",
-        "vue": "^2.5.11",
-        "vue-i18n": "^8.24.5",
-        "vue-loader": "^15.9.7",
-        "vue-template-compiler": "^2.4.4"
-    }
+  "name": "sent-sync",
+  "description": "Browser extension for syncing video playing progress with your friends",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@wxt-dev/auto-icons": "^1.1.0",
+    "@wxt-dev/module-react": "^1.1.3",
+    "prettier": "3.6.2",
+    "typescript": "^5.9.2",
+    "wxt": "^0.20.6"
+  }
 }
